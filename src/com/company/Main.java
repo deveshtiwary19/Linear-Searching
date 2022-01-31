@@ -3,9 +3,11 @@ package com.company;
 
 public class Main {
 
+
+
     public static void main(String[] args) {
 
-        int[] arr= {12,23,33,34,48};
+        int[] arr= {12,23,133,34,8};
         String string="Devesh";
 
         //Searching an Item in array
@@ -33,7 +35,46 @@ public class Main {
         }
         ////////////////////////////
 
+        //Following is the method, that find the greatest integer in array
+        System.out.println(findGreatest(arr));
+        ///////////////////////////////////////
 
+        //Following is the method, that find the smallest integer in array
+        System.out.println(findSmallest(arr));
+        ///////////////////////////////////////
+
+
+    }
+    //Following is the function, that finds smallest number in Array of integers
+    static int findSmallest(int[] arr){
+        if (arr.length==0){
+            return  0;
+        }
+
+        //Taking a default flag which we will keep updated as we keep finding a smaller number
+        int flag=Integer.MAX_VALUE; //Taking largest possible value
+        for (int i=0; i<arr.length;i++){
+            if(arr[i]< flag){
+                flag=arr[i];
+            }
+        }
+        return flag;
+    }
+
+    //Following is the function, that finds greatest number in Array of integers
+    static int findGreatest(int[] arr){
+        if (arr.length==0){
+            return  0;
+        }
+
+        //Taking a default flag which we will keep updated as we keep finding a larger number
+        int flag=Integer.MIN_VALUE; //Taking smallest possible value
+        for (int i=0; i<arr.length;i++){
+            if(arr[i]> flag){
+                flag=arr[i];
+            }
+        }
+        return flag;
     }
 
     //Following is the method, to search an item in an Array in a given Range
